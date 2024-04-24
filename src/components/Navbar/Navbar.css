@@ -1,0 +1,112 @@
+   .nav{
+        padding: 0rem 9%;
+        height: 8vh;
+        background: var(--primary-color);
+    }
+    .nav .links a{
+        margin: 0 1rem;
+padding: .1rem 1rem; transition: all .7s ease;
+border-radius: 1rem;
+}
+.nav .links a.active,.nav .links a:hover
+{
+box-shadow: 0px 0px 0px 1.6px rgba(0,0,0,0.2);
+   background-color: var(--main-color);  
+  
+   color:white;
+}
+    .nav .icons{
+        font-size: 2rem;
+        display: flex;
+    }
+    .nav .icons div{
+        cursor: pointer;
+margin: 0em 1rem;
+    }
+    .nav .importantIcon{
+        font-size: 2rem;
+        display: none;
+        cursor: pointer;
+    }
+    .nav .cartNo{
+        position: absolute;
+        top:-1.7rem;
+        background-color: var(--main-color);  
+        width: 2rem;
+        line-height: 2rem;
+        right: -1rem;
+        border-radius: 50%;
+        display: flex;align-items: center;
+        justify-content: center;
+        font-size: 1.5rem !important;
+
+
+    }
+.nav.active{
+    position: fixed !important;top: 0;right: 0;
+    left: 0;z-index: 1000;
+    transition: all 2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+    @media (max-width:770px) {
+        .nav{
+position: relative;
+        }
+        .nav .links.flex_c{
+            position: absolute;
+            flex-direction: column;
+            top: 0;
+          left: -70rem;
+        transition: all 2s ease;
+         z-index: 1000;
+            background: white;
+        height: 100vh;
+        justify-content: start;
+             width: 30rem;
+            box-shadow: 0 0 18px rgba(0,0,0,.3);
+        }
+        .nav .links.active{
+             left: 0;
+        }
+        .nav .links a:nth-child(1){
+            margin-top: 8rem;
+        }
+        .nav > .links a{
+           font-size: 2.5rem; 
+             border-radius: 1rem;
+           background: rgb(128, 128, 128,.1);
+           width: 98%;
+           margin: 1rem;
+           text-align: center;
+       }
+        .nav .importantIcon{
+            display: block;
+        }
+        .nav .fa-times{
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            backdrop-filter: blur(10rem);
+           width: 4.5rem;
+           height: 5rem;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+            font-size: 4rem;
+            border-radius: 50%;
+        }
+        .nav .fa-times:hover{
+            cursor: pointer;
+            background-color: var(--main-color);
+        }
+    }

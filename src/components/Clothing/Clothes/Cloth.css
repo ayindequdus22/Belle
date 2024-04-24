@@ -1,0 +1,149 @@
+.pads{
+    padding-bottom: 4rem;
+}
+#clothesProducts{
+    padding:4rem 6%;
+}
+#clothesProducts h3{
+    text-align: center;
+}
+#clothesProducts .filter{
+    margin: 2.5rem 0;
+
+}
+#clothesProducts img{
+    width: 30rem;
+height: 35rem;
+}
+#clothesProducts .ClothesContainer{
+gap: 1rem;
+/* background: white; */
+/* padding: 2rem 0 0; */
+}
+#clothesProducts .ClothesContainer .cloth {
+background: rgba(0,0,0,.1);
+padding: 1rem  1rem 0;
+}
+#clothesProducts .ClothesContainer .cloth .content{
+padding: .5rem 0% 1.5rem;
+}
+#clothesProducts .ClothesContainer .cloth .content .btn{
+width: 12rem;
+margin: 1rem 0 0;
+}
+
+
+
+
+
+.filter{
+    height: 8rem;
+    align-items: center !important  ;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+}
+.filter .sorts #select{
+    font-size: 1.7rem !important;
+    text-align: left;
+    width: 20rem;
+
+}
+.filter .sorts #select > * {
+    font-size: 2rem;
+    padding: 2rem !important;
+}
+
+.filter .sorts #select > *:hover {
+    background-color: var(--main-color) !important;
+}
+.filter form  {
+    position: relative;
+}
+.filter form  .fa-search{
+    position: absolute;cursor: pointer;
+    left: 0rem;
+    font-size: 2rem;
+    height: 3.75rem;
+    width: 4rem;color: var(--main-color);
+}
+.filter.flex form  .fa-search:hover{
+    background-color: var(--main-color);color: #000;
+    transition: all .4s ease;
+}
+.filter form  input{
+width: 40rem;
+font-size:2rem;
+height:4rem;
+box-shadow: 0 0 8px rgba(0,0,0,.1) !important;
+padding: 0 1rem 0 4rem;
+border-radius: 1rem;
+}
+.filter .sorts p{
+padding: 0rem 0 1rem;
+}
+.filter .sorts select{
+font-size: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.pagination.flex_c div{
+    margin: 0 .3rem;
+    font-size: 2.5rem;  
+    width: 3rem;
+    border-radius: 1rem;
+    line-height: 3rem;
+    cursor: pointer;text-align: center;
+    }
+    .pagination.flex_c div:hover:not(.fa){
+        background: var(--main-color);
+        box-shadow: 0 0 5px rgba(0,0,0,.3);
+        transition: all .2s ease;
+    }
+    .pagination.flex_c .fa{
+        background: var(--main-color);
+     width: 3rem;
+     line-height: 3rem;
+     padding: .4rem 0;
+     text-align: center;
+     box-shadow: 0 0 8px rgba(0,0,0,.3);transition: all .2s ease;
+    }
+    .pagination.flex_c .fa:hover{
+        background: var(--primary-color);
+    }
+
+
+
+
+
+  @media (max-width:700px) {
+    .filter .sorts{display: none;}
+    /* .filter form  input{
+width: inherit ;
+    } */
+  }
+  @media (max-width:340px) {
+    .filter form  input{
+    width: 35rem;
+    }
+}

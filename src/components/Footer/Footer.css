@@ -1,0 +1,66 @@
+footer{
+    background: rgb(0, 0, 0,.9);
+    color: white;
+    display: flex;    
+        flex-wrap: wrap;
+
+    padding: 4rem 9%;
+    justify-content: space-between;
+
+}
+footer > * h6{
+   margin-bottom: 1rem;
+position: relative;}
+
+footer > * h6::before{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: var(--primary-color);
+    width: 8rem;
+    height: .2rem;
+}
+footer > *:not(.followUs) a {
+color: rgb(255, 255, 255,.7);
+font-size:1.9rem;
+margin: .4rem; 
+}
+footer > *:not(.followUs) a:hover {
+    color:var(--main-color);
+    /* color: var(--primary-color); */
+    transition: all 1s ease;
+}
+footer > *:not(.followUs){
+    display: flex;
+    flex-direction: column;
+}
+footer .followUs a{
+    font-size: 2.5rem;
+    line-height: 4.5rem;
+    width: 5rem;
+    text-align: center;
+    align-items: center;color: rgb(255, 255, 255,.9);
+    border-radius: 50%;
+    background-color: #cac5c542;
+    transition: all 0.3s ease-in-out ;
+}
+footer .followUs a:hover{
+    background-color: var(--main-color);
+    color: white;
+    transition: all 1s ease;
+}
+footer .followUs a:not(:nth-child(1)){
+    margin: 0 .5rem;
+}
+@media (max-width:800px) {
+    footer > *{
+        margin: 0 1rem;
+    }
+    
+}
+@media (max-width:500px) {
+    footer > *{
+        margin: 1rem;
+    }
+}
