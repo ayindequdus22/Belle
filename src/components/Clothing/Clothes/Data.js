@@ -46,241 +46,241 @@ const ClothesData ={
 {
     id:1,
     ima:cloth1a,
-    price:'25.00',
+    price:25.00,
      name:'Fitting Gown'
 },
 {
     id:2,
     ima:man1,
-    price:'90.00',
+    price:90.00,
     name:`Men's Coat`
 },
 {
     id:3,
     ima:woman1,
-    price:'50.00',
+    price:50.00,
     name:'Asian Gown'
 },
 {
     id:4,
     ima:man2,
-    price:'80.00',
+    price:80.00,
    name:`Men's Suit`
 },
 {
     id:5,
     ima:cloth7a,
-    price:'50.00',
+    price:50.00,
     name:`Indian Gown`
 },
 {
     id:6,
     ima:cloth3a,
-    price:'40.00',
+    price:40.00,
     name:'Blouse'
 },
 {
     id:7,
     ima:cloth2a,
-    price:'65.00',
+    price:65.00,
     name:'Up & Down'
 },{
     id:8,
     ima:woman2,
-    price:'55.00',
+    price:55.00,
     name:'Freaky Freaky'
 },
 {
     id:9, 
      ima:woman3,
-    price:'78.00',
+    price:78.00,
     name:'Blouse'
 },
 {
     id:10,  
     ima:bag1,
-    price:'78.00',
+    price:78.00,
     name:'Chanel Bag'
 },
 {
     id:11,   
      ima:woman4,
-    price:'78.00',
+    price:78.00,
     name:'Cape Dress'
 },
 {
     id:12,     
     ima:woman5,
-    price:'128.00',
+    price:128.00,
     name:'Hot Blonde'
 },
 {
     id:13,
     ima:woman6,
-    price:'78.00',
+    price:78.00,
     name:`Women's Heel`
 },
 {
    id:14,
     ima:man3,
-    price:'120.00',
+    price:120.0,
     name:`Men's Suit `
 },
 {
      id:15,
     ima:bag2,
-    price:'18.00',
+    price:18.00,
     name:`Chanel Bag `
 },
 
 {
     id:16,
     ima:man4,
-    price:'120.00',
+    price:120.0,
     name:`Men's Suit `
 },
 {
     id:17,  
       ima:man5,
-    price:'60.00',
+    price:60.00,
     name:`Men's Suit `
 },
 {
     id:18,
     ima:woman7,
-    price:'100.00',
+    price:100.00,
     name:`Men's Suit `
 },
 {
     id:19,
     ima:man6,
-    price:'80.00',
+    price:80.00,
     name:`Men's Suit `
 },
 {
     id:20,
     ima:bag3,
-    price:'40.00',
+    price:40.00,
     name:`Chanel Bag `
 },
 {
     id:21,
     ima:shoe1,
-    price:'65.00',
+    price:65.00,
     name:`Shoe`
 },
 {
     id:22,
     ima:woman8,
-    price:'96.00',
+    price:96.00,
     name:`Hot Gown`
 },
 {
     id:23,
     ima:woman9,
-    price:'30.00',
+    price:30.00,
     name:`Shoe`
 },
 {
     id:24,
     ima:woman10,
-    price:'20.00',
+    price:20.00,
     name:`Hats`
 },
 {
     id:25,
     ima:woman11,
-    price:'40.00',
+    price:40.00,
     name:`Female Hoodies`
 },
 {
     id:26,
     ima:woman12,
-    price:'60.00',
+    price:60.00,
     name:`Indian Gown`
 },
 {
     id:27,
     ima:woman13,
-    price:'100.00',
+    price:100.00,
     name:`Lovable Gowns`
 },
 {
     id:28,
     ima:woman14,
-    price:'30.00',
+    price:30.00,
     name:`Female Sweaters`
 },
 {
     id:29,
     ima:woman15,
-    price:'45.00',
+    price:45.00,
     name:`Hand Bags`
 },
 {
     id:30,
     ima:woman16,
-    price:'60.00',
+    price:60.00,
     name:`Female Heels`
 },
 {
     id:31,
     ima:woman17,
-    price:'20.00',
+    price:20.00,
     name:`Hot Jeans`
 },
 {
     id:32,
     ima:bag4,
-    price:'60.00',
+    price:60.00,
     name:`Hand Bag`
 },
 {
     id:33,
     ima:man7,
-    price:'75.00',
+    price:75.00,
     name:`Men's Suit`
 },
 {
     id:34,
     ima:woman18,
-    price:'50.00',
+    price:50.00,
     name:`Shoe`
 },
 {
     id:35,
     ima:bag5,
-    price:'45.00',
+    price:45.00,
     name:`Hand Bag`
 },
 {
     id:36,
     ima:man8,
-    price:'50.00',
+    price:50.00,
     name:`Men's Coat`
 },
 {
     id:37,
     ima:bag6,
-    price:'30.00',
+    price:30.00,
     name:`Hand Bag`
 },
 {
     id:38,
     ima:woman19,
-    price:'50.00',
+    price:50.00,
     name:`Hot Goat`
 },
 {
     id:39,
     ima:woman20,
-    price:'10.00',
+    price:10.00,
     name:`Cute Glass`
 },
 {
     id:40,
     ima:bag7,
-    price:'35.00',
+    price:35.00,
     name:`Hand Bag`
 },
 

@@ -19,7 +19,6 @@ const CartSlice = createSlice({
       if (itemIndex) {
         itemIndex.cartQuantity += 1;
       }
-     
       else {
         const temp = { ...action.payload, cartQuantity: 1 };
         state.cartItems.push(temp);
@@ -77,7 +76,7 @@ const CartSlice = createSlice({
         }
       );
 
-      state.cartTotalAmount = totalAmount.toFixed(2);
+      state.cartTotalAmount = totalAmount?.toFixed(2);
       state.cartTotalQuantity = totalQTY;
     },
   },
@@ -91,6 +90,7 @@ export const {
   setClearCartItems,
   setGetTotals,
 } = CartSlice.actions;
+export const selectCartItems = (state) => state.cart.cartItems;
 
 export const cartProducts = (state) => state.cart.cartItems;
 export const selectTotalAmount = (state) => state.cart.cartTotalAmount;

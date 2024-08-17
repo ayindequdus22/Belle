@@ -2,6 +2,8 @@ import React,{useState} from 'react'
 
 import Loader from '../../loader/Loader';
 import './Cloth.css'
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../utils/cartSlice';
 
 const Cloth = ({ClothesData:{data}}) => {
   const [page,setPage] = useState(8)
@@ -13,6 +15,7 @@ const loader = ()=>{
     setLoading(false)
   },2000)
 }
+const dispatch = useDispatch()
 
 
   return (
@@ -50,6 +53,7 @@ const loader = ()=>{
        <p style={{padding:'1rem 0 .5rem'}}>{val.name}</p>
           <p style={{color:'var(--primary-color)',fontWeight:'600'}}>${val.price}</p>
           <button className="btn Imp" onClick={()=>{
+            dispatch(addToCart(val))
           }}>Add to Cart</button>
         </div>
       </div>
