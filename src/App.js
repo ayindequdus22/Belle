@@ -1,11 +1,17 @@
 import './App.css';
-import {useState,useEffect} from 'react'
+import {useState,useEffect,lazy, Suspense} from 'react'
 import {Route,Routes } from 'react-router-dom'
-import Products from './components/Clothing/Products';
 import HomeContainer from './components/HomeContainer/HomeContainer';
+import Loader from './components/loader/Loader';
+import { Provider } from 'react-redux';
+import Store from './components/utils/Store';
 
-import Notfound from './components//Notfound/Notfound';
-import Blog from './components//Blog/Blog';
+
+const Blog   = lazy(() => import('./components//Blog/Blog'));
+const NotFound = lazy(() => import('./components//Notfound/Notfound'));
+const Cart  = lazy(()=> import("./components/cart/Cart"))
+const Products = lazy(() => import('./components/Clothing/Products'));
+
 function App() {
   const [visible,setVisible]=useState(false);
   useEffect(()=>{
@@ -21,13 +27,16 @@ window.addEventListener("scroll",()=>{
 },[])
   return (
  <>
+   <Suspense fallback={<Loader  />}>
+    <Provider store={Store}>
 
+   
   <Routes>
       <Route path='/' element={<HomeContainer/>}/>
 <Route path='/products' element={<Products/>}/>
-
+<Route path='/cart' element={<Cart/>}/>
 <Route path='/blog' element={<Blog/>}/>
-<Route path='*' element={<Notfound/>}/>
+<Route path='*' element={<NotFound/>}/>
   </Routes>
   <div className='relativeIcons'>
 <>
@@ -35,8 +44,8 @@ window.addEventListener("scroll",()=>{
 <div className={visible ? "fa fa-chevron-down active": ""} onClick={()=>{window.scrollTo({top:document.documentElement.scrollHeight,behavior:'smooth'})}}></div>
 </>
 
-</div>
-
+</div> </Provider>
+</Suspense>
   </>
   );
 }

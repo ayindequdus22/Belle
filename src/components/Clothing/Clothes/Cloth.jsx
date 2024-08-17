@@ -29,7 +29,7 @@ const loader = ()=>{
     <div className="sorts">
       <p>Sort by:</p>
       <select name="" id="select">
-        <option value="" selected>Position</option>
+        <option value="Position">Position</option>
   <option value="Price:Lowest first">Price:Lowest first</option>  
 <option value="Price:Highest first">Price:HIghest first</option>
 <option value="Product Name:A to Z">Product Name:A to Z </option>
@@ -45,7 +45,6 @@ const loader = ()=>{
       <div className="cloth" key={val.id}>
         <div className="img">
           <img src={val.ima} alt={val.id} />
-          {/* <img src={val.imb} alt={val.id} /> */}
         </div>
         <div className="content flex_d">
        <p style={{padding:'1rem 0 .5rem'}}>{val.name}</p>
