@@ -47,7 +47,6 @@ window.addEventListener("scroll",()=>{
       />
     <Provider store={Store}>
 
-   
   <Routes>
       <Route path='/' element={<HomeContainer/>}/>
 <Route path='/products' element={<Products/>}/>

@@ -8,34 +8,33 @@ const Navbar = () => {
   const [visible, setVisible] = useState(false)
   const [navState, setNavState] = useState(false);
 
+
   const onNavScroll = () => {
-    if (window.scrollY > 150) {
-      setNavState(true);
+    if (window.scrollY > 50) {
+      setNavState(true)
     } else {
       setNavState(false);
     }
-  }
-  useEffect(() => {
-    window.addEventListener('scroll', onNavScroll
 
-    );
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", onNavScroll);
     return () => {
-      window.removeEventListener('scroll', onNavScroll);
-    }
+      window.removeEventListener("scroll", onNavScroll);
+    };
   }, []);
   const cartItems = useSelector(selectCartItems);
   const totalQTY = useSelector(selectTotalQTY);
-  
-  // console.log(cartItems)
-const dispatch = useDispatch()
+
+  const dispatch = useDispatch()
   useEffect(() => {
     dispatch(setGetTotals())
-  },[cartItems, dispatch])
-  
+  }, [cartItems, dispatch])
+
   return (
     <>
 
-      <div className={!navState ? ' flex_b nav' : ' flex_b nav active'}>
+      <div className={`flex_b nav ${navState ? 'active' : ''}`}>
         <div className="fa fa-bars importantIcon" onClick={() => { setVisible(true) }}></div>
         <NavLink to='/'>
           <img src={logo} alt="" />
