@@ -30,7 +30,7 @@ return(
     <img src={bg2} alt="" />
 </div>
 <div className="content flex_d">
-<p >Home <div className="fa fa-chevron-right"></div> <span>Products</span></p>
+<div >Home <div className="fa fa-chevron-right"></div> <span>Products</span></div>
 <h1>Favourite Shoes From Belle</h1>
 <div>
     <a href="#clothesProducts" className="btn flex_c" >See More</a>

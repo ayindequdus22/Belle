@@ -46,37 +46,37 @@ const ClothesData ={
 {
     id:1,
     ima:cloth1a,
-    price:25.00,
+    price:25.34,
      name:'Fitting Gown'
 },
 {
     id:2,
     ima:man1,
-    price:90.00,
+    price:90.12,
     name:`Men's Coat`
 },
 {
     id:3,
     ima:woman1,
-    price:50.00,
+    price:50.56,
     name:'Asian Gown'
 },
 {
     id:4,
     ima:man2,
-    price:80.00,
+    price:80.86,
    name:`Men's Suit`
 },
 {
     id:5,
     ima:cloth7a,
-    price:50.00,
+    price:50.640,
     name:`Indian Gown`
 },
 {
     id:6,
     ima:cloth3a,
-    price:40.00,
+    price:40.81,
     name:'Blouse'
 },
 {
@@ -117,7 +117,7 @@ const ClothesData ={
 {
     id:13,
     ima:woman6,
-    price:78.00,
+    price:78.11,
     name:`Women's Heel`
 },
 {
@@ -148,31 +148,31 @@ const ClothesData ={
 {
     id:18,
     ima:woman7,
-    price:100.00,
+    price:100.33,
     name:`Men's Suit `
 },
 {
     id:19,
     ima:man6,
-    price:80.00,
+    price:80.08,
     name:`Men's Suit `
 },
 {
     id:20,
     ima:bag3,
-    price:40.00,
+    price:40.61,
     name:`Chanel Bag `
 },
 {
     id:21,
     ima:shoe1,
-    price:65.00,
+    price:65.55,
     name:`Shoe`
 },
 {
     id:22,
     ima:woman8,
-    price:96.00,
+    price:96.81,
     name:`Hot Gown`
 },
 {
@@ -196,49 +196,49 @@ const ClothesData ={
 {
     id:26,
     ima:woman12,
-    price:60.00,
+    price:60.56,
     name:`Indian Gown`
 },
 {
     id:27,
     ima:woman13,
-    price:100.00,
+    price:100.67,
     name:`Lovable Gowns`
 },
 {
     id:28,
     ima:woman14,
-    price:30.00,
+    price:30.91,
     name:`Female Sweaters`
 },
 {
     id:29,
     ima:woman15,
-    price:45.00,
+    price:45.80,
     name:`Hand Bags`
 },
 {
     id:30,
     ima:woman16,
-    price:60.00,
+    price:60.18,
     name:`Female Heels`
 },
 {
     id:31,
     ima:woman17,
-    price:20.00,
+    price:20.47,
     name:`Hot Jeans`
 },
 {
     id:32,
     ima:bag4,
-    price:60.00,
+    price:60.05,
     name:`Hand Bag`
 },
 {
     id:33,
     ima:man7,
-    price:75.00,
+    price:75.68,
     name:`Men's Suit`
 },
 {
@@ -268,19 +268,19 @@ const ClothesData ={
 {
     id:38,
     ima:woman19,
-    price:50.00,
+    price:50.21,
     name:`Hot Goat`
 },
 {
     id:39,
     ima:woman20,
-    price:10.00,
+    price:10.34,
     name:`Cute Glass`
 },
 {
     id:40,
     ima:bag7,
-    price:35.00,
+    price:35.59,
     name:`Hand Bag`
 },
 

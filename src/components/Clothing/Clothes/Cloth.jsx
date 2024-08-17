@@ -51,7 +51,7 @@ const dispatch = useDispatch()
         </div>
         <div className="content flex_d">
        <p style={{padding:'1rem 0 .5rem'}}>{val.name}</p>
-          <p style={{color:'var(--primary-color)',fontWeight:'600'}}>${val.price}</p>
+          <p style={{color:'var(--primary-color)',fontWeight:'600'}}>${val.price?.toFixed(2)}</p>
           <button className="btn Imp" onClick={()=>{
             dispatch(addToCart(val))
           }}>Add to Cart</button>
@@ -72,7 +72,7 @@ const dispatch = useDispatch()
         setPage(page -4)
       }
     }}></div>
-    <div onClick={(e)=>{setPage(8) 
+    <div onClick={()=>{setPage(8) 
    loader()
  
     }}>1</div>

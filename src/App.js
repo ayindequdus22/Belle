@@ -5,6 +5,7 @@ import HomeContainer from './components/HomeContainer/HomeContainer';
 import Loader from './components/loader/Loader';
 import { Provider } from 'react-redux';
 import Store from './components/utils/Store';
+import { ToastContainer } from 'react-toastify';
 
 
 const Blog   = lazy(() => import('./components//Blog/Blog'));
@@ -28,6 +29,22 @@ window.addEventListener("scroll",()=>{
   return (
  <>
    <Suspense fallback={<Loader  />}>
+   <ToastContainer containerId="A" toastClassName="toastBody" className="toastContainer"
+        position="bottom-right" style={{
+          zIndex: 20
+        }}
+        limit={4}
+        progressClassName="progressClass"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        // theme="dark"
+      />
     <Provider store={Store}>
 
    

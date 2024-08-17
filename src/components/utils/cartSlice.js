@@ -27,6 +27,7 @@ const CartSlice = createSlice({
       toast.success(`${action.payload.name} has been added`);
     },
     removeItem: (state, action) => {
+
       const removeItem = state.cartItems.filter(
         (item) => item.id !== action.payload.id
       );

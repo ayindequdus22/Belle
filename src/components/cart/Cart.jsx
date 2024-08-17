@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./cart.css";
 import { Footer, Navbar } from "../Index";
 import { useDispatch, useSelector } from "react-redux";
-import { cartProducts, removeItem, selectTotalAmount, selectTotalQTY, setClearCartItems, upDateItemQty } from "../utils/cartSlice";
+import { cartProducts, decreaseItemQty, increaseItemQty, removeItem, selectTotalAmount, selectTotalQTY, setClearCartItems, upDateItemQty } from "../utils/cartSlice";
 import Toast from "../utils/Toast";
 import { toast } from "react-toastify";
 
@@ -33,7 +33,7 @@ const Cart = () => {
               <span style={{ paddingLeft: "1rem" }}>Continue Shopping</span>
             </Link>
             <div className="clearBtn">
-              <button onClick={() => dispatch(setClearCartItems)}>
+              <button onClick={() => dispatch(setClearCartItems())}>
                 Clear Cart
               </button>
             </div>
@@ -43,10 +43,11 @@ const Cart = () => {
         <div className="cartCont">
           <div className="cartItemContainer">
             {cartItems.map((cartItem) => {
-              console.log(cartItem)
               let newPrice = (cartItem?.price * cartItem.
                 cartQuantity
               ).toFixed(2);
+
+
               return (
 
                 <div className="cartItem" key={cartItem.id}>
@@ -60,7 +61,8 @@ const Cart = () => {
                   <div className="changes">
                     <button
                       onClick={() => {
-                        dispatch(upDateItemQty())
+                        dispatch(decreaseItemQty(cartItem))
+
                       }}
                     >
                       -
@@ -73,7 +75,7 @@ const Cart = () => {
                     />
                     <button
                       onClick={() => {
-
+                        dispatch(increaseItemQty(cartItem))
                       }}
 
                     >
@@ -82,16 +84,14 @@ const Cart = () => {
                   </div>
                   <div className="details">
                     <p>{newPrice}</p>
-                    <p style={{ color: "blue" }}>
-                      {cartItem.price} x
-                      {cartItem.cartQuantity} items
+                    <p style={{ color: "var(--main-color)", fontWeight: "bold" }}>
+                      {cartItem.price} x {cartItem.cartQuantity} items
                     </p>
                   </div>
                   <div className="remove">
                     <button
                       onClick={() => {
-                        dispatch(removeItem())
-                        toast(<Toast image={cartItem.product.image} name={cartItem.product.name} text={`${cartItem.product.name} has been removed `} />, { containerId: 'A' })
+                        dispatch(removeItem(cartItem))
                       }}
                     >
                       Remove Item
@@ -118,7 +118,7 @@ const Cart = () => {
             </div>
             <div className="df-jsb-ac subtotal">
               <p>Total</p>
-              <p>{(totalAmount - totalAmount / 10).toFixed(2)}</p>
+              <p style={{ color: " var(--primary-color)", fontWeight: "500" }}>{(totalAmount - totalAmount / 10).toFixed(2)}</p>
             </div>
             <div className="deliveryCharges">
               <p>Excluding delivery charge</p>
