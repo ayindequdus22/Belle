@@ -2,6 +2,7 @@ import React from 'react'
 import './Blog.css'
 import { BlogData } from './BlogData'
 import { Footer, Navbar } from '../Index';
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
 
@@ -11,7 +12,10 @@ const Blog = () => {
       <Navbar />
       <div className="blog">
         <h3>My Blog</h3>
-        <p >Home <div className="fa fa-chevron-right"></div> <span>Blog</span></p>
+        <p >
+          <Link to={"/"}>Home
+          </Link>
+           <div className="fa fa-chevron-right"></div> <span>Blog</span></p>
         <div className="blogItems">
           {
             BlogData.map((value, key) => (

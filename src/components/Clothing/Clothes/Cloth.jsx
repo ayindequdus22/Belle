@@ -1,64 +1,60 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
 import Loader from '../../loader/Loader';
 import './Cloth.css';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../utils/cartSlice';
 
-const Items = ({ currentItems }) => {
+
+const Cloth = ({ ClothesData: { data } }) => {
   const dispatch = useDispatch();
-
-  return (
-    <>
-      {currentItems.map((val) => (
-        <div className="cloth" key={val.id}>
-          <div className="img">
-            <img src={val.ima} alt={val.id} />
-          </div>
-          <div className="content flex_d">
-            <p style={{ padding: '1rem 0 .5rem' }}>{val.name}</p>
-            <p style={{ color: 'var(--primary-color)', fontWeight: '600' }}>
-              ${val.price?.toFixed(2)}
-            </p>
-            <button
-              className="btn Imp"
-              onClick={() => {
-                dispatch(addToCart(val));
-              }}
-            >
-              Add to Cart
-            </button>
-          </div>
-        </div>
-      ))}
-    </>
-  );
-};
-
-const Cloth = ({ ClothesData: { data }, itemsPerPage }) => {
+  const [currentItems, setCurrentItems] = useState(null);
+  const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [loading, setLoading] = useState(false);
+  const [filter, setFilter] = useState("cloth")
+  const itemsPerPage = 8;
+  useEffect(() => {
+    const endOffset = itemOffset + itemsPerPage;
+    setCurrentItems(data.slice(itemOffset, endOffset));
+    setPageCount(Math.ceil(data.length / itemsPerPage));
 
-  const endOffset = itemOffset + itemsPerPage;
-  console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = data.slice(itemOffset, endOffset);
-  const pageCount = Math.ceil(data.length / itemsPerPage);
+  }, [itemOffset, itemsPerPage, data])
+  // const [itemOffset, setItemOffset] = useState(0);
+  // const [loading, setLoading] = useState(false);
+
+  // const endOffset = itemOffset + itemsPerPage;
+  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
+  // const currentItems = data.slice(itemOffset, endOffset);
+  // const pageCount = Math.ceil(data.length / itemsPerPage);
+
+  // const handlePageClick = (event) => {
+  //   const newOffset = (event.selected * itemsPerPage) % data.length;
+  //   console.log(
+  //     `User requested page number ${event.selected}, which is offset ${newOffset}`
+  //   );
+  //   setItemOffset(newOffset);
+  // };
+
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % data.length;
-    console.log(
-      `User requested page number ${event.selected}, which is offset ${newOffset}`
-    );
     setItemOffset(newOffset);
   };
 
-  const loader = () => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  };
+  // const loader = () => {
+  //   setLoading(true);
+  //   setTimeout(() => {
+  //     setLoading(false);
+  //   }, 2000);
+  // };
 
+              console.log(currentItems?.
+                forEach((item) => item.price === 25.34
+
+                  // item.name == "Men's Coat"
+                )
+              )
+            
   return (
     <>
       <div className="pads">
@@ -80,24 +76,45 @@ const Cloth = ({ ClothesData: { data }, itemsPerPage }) => {
               </select>
             </div>
           </div>
-          {loading ? (
-            <Loader />
-          ) : (
-            <div className="ClothesContainer flex_wrap">
-              <Items currentItems={currentItems} />
-              <ReactPaginate
-                breakLabel="..."
-                nextLabel="next >"
-                onPageChange={handlePageClick}
-                pageRangeDisplayed={5}
-                pageCount={pageCount}
-                previousLabel="< previous"
-                renderOnZeroPageCount={null}
-                containerClassName="pagination"
-                activeClassName="active"
-              />
-            </div>
-          )}
+          <div className="ClothesContainer flex_wrap" >
+            
+            {currentItems?.map((val) => (
+              <div className="cloth" key={val.id}>
+                <div className="img">
+                  <img src={val.ima} alt={val.id} />
+                </div>
+                <div className="content flex_d">
+                  <p style={{ padding: '1rem 0 .5rem' }}>{val.name}</p>
+                  <p style={{ color: 'var(--primary-color)', fontWeight: '600' }}>
+                    ${val.price?.toFixed(2)}
+                  </p>
+                  <button
+                    className="btn Imp"
+                    onClick={() => {
+                      dispatch(addToCart(val));
+                    }}
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            ))}
+
+
+          </div>
+          <ReactPaginate
+            breakLabel="..."
+            previousLabel={<div className="fa fa-chevron-left"></div>
+            } pageClassName={"paginateClassName"}
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={5}
+            pageCount={pageCount}
+            nextLabel={<div className="fa fa-chevron-right"></div>}
+            renderOnZeroPageCount={null}
+            containerClassName="pagination"
+            activeClassName="paginateBtns active"
+          />
+
         </div>
       </div>
     </>

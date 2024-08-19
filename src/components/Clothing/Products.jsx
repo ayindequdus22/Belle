@@ -14,7 +14,7 @@ const Products = () => {
 <Main/>
 <div style={{ backgroundColor:'#f2f3f7'}}>
 
-  <Cloth ClothesData={ClothesData} itemsPerPage={8} />
+  <Cloth ClothesData={ClothesData} />
 
 </div>
 <Footer/>
