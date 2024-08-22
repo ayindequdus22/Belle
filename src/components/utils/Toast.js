@@ -1,5 +1,3 @@
-
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Toast = ({ image, name, text }) => {
     return (

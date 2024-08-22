@@ -100,7 +100,7 @@
       height: 70%;
 
 
-      box-shadow: 0px 0px 5px rgba(0, 0, 0,0.24);
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.24);
       justify-content: space-between;
       border-radius: 0.5rem;
 
@@ -130,12 +130,13 @@
 
         &:nth-child(3) {
           p:nth-child(2) {
-            color: var(--primary-color);      font-weight: 500;
+            color: var(--primary-color);
+            font-weight: 500;
 
           }
         }
 
-       
+
 
         p {
           font-size: 2rem;
@@ -246,12 +247,19 @@
     }
   }
 }
-.df-jsb-ac{
-  display: flex;justify-content: space-between;align-items: center;
+
+.df-jsb-ac {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.dfAc{
-display: flex;justify-content: center;align-items: center;
+
+.dfAc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 @media (max-width: 670px) {
   .sizedBox {
     padding-top: 6rem;

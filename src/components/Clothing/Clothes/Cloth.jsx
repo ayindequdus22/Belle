@@ -17,22 +17,16 @@ const Cloth = ({ ClothesData: { data } }) => {
     const endOffset = itemOffset + itemsPerPage;
     setCurrentItems(data.slice(itemOffset, endOffset));
     setPageCount(Math.ceil(data.length / itemsPerPage));
-
   }, [itemOffset, itemsPerPage, data])
-
-  
-
-
   const handlePageClick = (event) => {
-     const newOffset = (event.selected * itemsPerPage) % data.length;
+    const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
     const middleOfScreen = window.innerHeight / 1.1;
     window.scrollTo({ top: middleOfScreen, behavior: 'smooth' });
-    };
+  };
 
 
-           
-            
+
   return (
     <>
       <div className="pads" id='items'>
@@ -54,9 +48,9 @@ const Cloth = ({ ClothesData: { data } }) => {
               </select>
             </div>
           </div>
-          {<>
+
           <div className="ClothesContainer flex_wrap" >
-            
+
             {currentItems?.map((val) => (
               <div className="cloth" key={val.id}>
                 <div className="img">
@@ -93,9 +87,7 @@ const Cloth = ({ ClothesData: { data } }) => {
             containerClassName="pagination"
             activeClassName="paginateBtns active"
           />
-          </>
-          
-          }
+
 
         </div>
       </div>

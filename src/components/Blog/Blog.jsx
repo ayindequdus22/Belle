@@ -9,13 +9,12 @@ const Blog = () => {
   return (
     <>
 
-      <Navbar />
       <div className="blog">
         <h3>My Blog</h3>
         <p >
           <Link to={"/"}>Home
           </Link>
-           <div className="fa fa-chevron-right"></div> <span>Blog</span></p>
+          <div className="fa fa-chevron-right"></div> <span>Blog</span></p>
         <div className="blogItems">
           {
             BlogData.map((value, key) => (
