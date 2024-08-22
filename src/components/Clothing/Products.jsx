@@ -3,7 +3,7 @@ import React from 'react'
 import Cloth from './Clothes/Cloth'
 import Main from './Main/Main'
 import { ClothesData } from './Clothes/Data'
-import { Footer, Navbar } from '../Index';
+import { Footer } from '../Index';
 
 const Products = () => {
 

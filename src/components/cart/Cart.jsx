@@ -1,11 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./cart.css";
-import { Footer, Navbar } from "../Index";
+import { Footer } from "../Index";
 import { useDispatch, useSelector } from "react-redux";
-import { cartProducts, decreaseItemQty, increaseItemQty, removeItem, selectTotalAmount, selectTotalQTY, setClearCartItems, upDateItemQty } from "../utils/cartSlice";
-import Toast from "../utils/Toast";
-import { toast } from "react-toastify";
+import { cartProducts, decreaseItemQty, increaseItemQty, removeItem, selectTotalAmount, selectTotalQTY, setClearCartItems } from "../utils/cartSlice";
 
 const Cart = () => {
   const cartItems = useSelector(cartProducts);
@@ -14,7 +12,6 @@ const Cart = () => {
   const dispatch = useDispatch()
   return (
     <>
-      <Navbar />
       {cartItems?.length === 0 ? <div className="emptyCart dfAc">
         <h1>Cart is empty</h1>
       </div> : <div className="cartContainer">
@@ -43,8 +40,7 @@ const Cart = () => {
         <div className="cartCont">
           <div className="cartItemContainer">
             {cartItems.map((cartItem) => {
-              let newPrice = (cartItem?.price * cartItem.
-                cartQuantity
+              let newPrice = (cartItem?.price * cartItem.cartQuantity
               ).toFixed(2);
 
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import './Notfound.css'
-import { Navbar, Footer } from '../Index'
+import {  Footer } from '../Index'
 import bg from '../../image/banner/4 copy.jpg'
 const Notfound = () => {
   return (

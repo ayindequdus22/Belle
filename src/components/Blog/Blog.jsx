@@ -1,7 +1,7 @@
 import React from 'react'
 import './Blog.css'
 import { BlogData } from './BlogData'
-import { Footer, Navbar } from '../Index';
+import { Footer } from '../Index';
 import { Link } from 'react-router-dom';
 
 const Blog = () => {
@@ -18,12 +18,12 @@ const Blog = () => {
         <div className="blogItems">
           {
             BlogData.map((value, key) => (
-              <div key={key} className="blogItem1">
+              <div key={key} className="blogItem1" id='blogItem1'>
                 <div className="image">
                   <img src={value.img} alt="" />
                 </div>
                 <div className="content">
-                  <a href='#'>{value.title}</a>
+                  <a href='#blogItem1'>{value.title}</a>
                   <h6>{value.heading}</h6>
                   <p>By Mr Opeyemi Qudus Ayinde / {value.date}</p>
                 </div>
