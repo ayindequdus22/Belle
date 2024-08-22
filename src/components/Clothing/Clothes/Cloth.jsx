@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from 'react';
 import ReactPaginate from 'react-paginate';
-import Loader from '../../loader/Loader';
 import './Cloth.css';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../utils/cartSlice';
 
 
 const Cloth = ({ ClothesData: { data } }) => {
+
+
   const dispatch = useDispatch();
   const [currentItems, setCurrentItems] = useState(null);
   const [pageCount, setPageCount] = useState(0);
   const [itemOffset, setItemOffset] = useState(0);
-  const [filter, setFilter] = useState("cloth")
   const itemsPerPage = 8;
   useEffect(() => {
     const endOffset = itemOffset + itemsPerPage;
@@ -19,45 +19,23 @@ const Cloth = ({ ClothesData: { data } }) => {
     setPageCount(Math.ceil(data.length / itemsPerPage));
 
   }, [itemOffset, itemsPerPage, data])
-  // const [itemOffset, setItemOffset] = useState(0);
-  // const [loading, setLoading] = useState(false);
 
-  // const endOffset = itemOffset + itemsPerPage;
-  // console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  // const currentItems = data.slice(itemOffset, endOffset);
-  // const pageCount = Math.ceil(data.length / itemsPerPage);
-
-  // const handlePageClick = (event) => {
-  //   const newOffset = (event.selected * itemsPerPage) % data.length;
-  //   console.log(
-  //     `User requested page number ${event.selected}, which is offset ${newOffset}`
-  //   );
-  //   setItemOffset(newOffset);
-  // };
+  
 
 
   const handlePageClick = (event) => {
-    const newOffset = (event.selected * itemsPerPage) % data.length;
+     const newOffset = (event.selected * itemsPerPage) % data.length;
     setItemOffset(newOffset);
-  };
+    const middleOfScreen = window.innerHeight / 1.1;
+    window.scrollTo({ top: middleOfScreen, behavior: 'smooth' });
+    };
 
-  // const loader = () => {
-  //   setLoading(true);
-  //   setTimeout(() => {
-  //     setLoading(false);
-  //   }, 2000);
-  // };
 
-              console.log(currentItems?.
-                forEach((item) => item.price === 25.34
-
-                  // item.name == "Men's Coat"
-                )
-              )
+           
             
   return (
     <>
-      <div className="pads">
+      <div className="pads" id='items'>
         <div id="clothesProducts">
           <h3>Our Clothing Accessories</h3>
           <div className="filter">
@@ -76,6 +54,7 @@ const Cloth = ({ ClothesData: { data } }) => {
               </select>
             </div>
           </div>
+          {<>
           <div className="ClothesContainer flex_wrap" >
             
             {currentItems?.map((val) => (
@@ -114,6 +93,9 @@ const Cloth = ({ ClothesData: { data } }) => {
             containerClassName="pagination"
             activeClassName="paginateBtns active"
           />
+          </>
+          
+          }
 
         </div>
       </div>
@@ -122,47 +104,3 @@ const Cloth = ({ ClothesData: { data } }) => {
 };
 
 export default Cloth;
-
-
-
-{/* <div className="pagination flex_c" >
-          <div className="fa fa-chevron-left" onClick={() => {
-            loader()
-            if (page === 8) {
-              alert(`You are caught up in our feed`)
-            }
-            else {
-              setPage(page - 4)
-            }
-          }}></div>
-          <div onClick={() => {
-            setPage(8)
-            loader()
-
-          }}>1</div>
-          <div onClick={() => {
-            setPage(16)
-            loader()
-          }}>2</div>
-          <div onClick={() => {
-            setPage(24)
-            loader()
-          }}>3</div>
-          <div onClick={() => {
-            setPage(32)
-            loader()
-          }}>4</div>
-          <div onClick={() => {
-            setPage(40)
-            loader()
-          }}>5</div>
-          <div className="fa fa-chevron-right" onClick={() => {
-            loader()
-            if (page === 40) {
-              alert(`Come back later for new products`)
-            }
-            else {
-              setPage(page + 4)
-            }
-          }}></div>
-        </div> */}
